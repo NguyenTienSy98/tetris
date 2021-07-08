@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+body {
+    background-color: black;
+}
+
+.main {
+    box-sizing: content-box;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    // width: 700px;
+    // height: 600px;
+    &>.leftCanvas {
+        width: 150px;
+        height: 150px;
+        margin-right: 50px;
+        &>#skipCanvas {
+            border: 3px solid grey;
+        }
+    }
+    &>.myCanvas {
+        margin: 0;
+        padding: 0;
+        width: 300px;
+        height: 600px;
+        margin-right: 50px;
+        box-sizing: content-box;
+        border: 3px solid grey;
+        position: relative;
+        &>.box {
+            width: 300px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            &>.row {
+                width: 300px;
+                height: 30px;
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                &>div {
+                    box-sizing: border-box;
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+        &>#myCanvas {
+            position: absolute;
+            top: 0;
+            box-sizing: content-box;
+        }
+    }
+    &>.rightCanvas {
+        display: flex;
+        flex-direction: column;
+        &>#nextCanvas {
+            border: 3px solid grey;
+            margin-bottom: 50px;
+        }
+        &>#scoreCanvas {
+            border: 3px solid grey;
+        }
+    }
+}
