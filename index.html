@@ -18,8 +18,8 @@
         <div class="leftCanvas">
             <canvas id="skipCanvas" width="150" height="150">   </canvas>
         </div>
-        <div class="myCanvas"> <canvas id="myCanvas" width="300" height="600"></canvas>
-            <div class="box " width="300 " height="600 " style="position: absolute" ;>
+        <div class="myCanvas">
+            <div class="box " width="300 " height="600 ">
                 <div class=" row ">
                     <div id="1"></div>
                     <div id="2"></div>
@@ -261,8 +261,9 @@
                     <div id="200"></div>
                 </div>
             </div>
+            <canvas id="myCanvas" width="300" height="600" style="position: absolute"></canvas>
         </div>
-        <div class="rightCanvas ">
+        <div class="rightCanvas">
             <canvas id="nextCanvas" width="150 " height="150 "></canvas>
             <canvas id="scoreCanvas" width="150 " height="150 "></canvas>
         </div>
@@ -271,14 +272,14 @@
     <script src="./js/selectBlock.js "></script>
     <script src="./js/dropBlock.js "></script>
     <script src="./js/checkBlock.js "></script>
-    <script src="./js/saveBlock.js ">
-    </script>
+    <script src="./js/saveBlock.js "></script>
     <script src="./js/randomBlock.js"></script>
     <script src="./js/key.js "></script>
-    <script src="./js/drawImgDown.js "></script>
+    <script src="./js/drawDown.js "></script>
     <script src="./js/keyDown.js"></script>
     <script src="./js/clearRow.js"></script>
     <script src="./js/skipBlock.js"></script>
+    <script src="./js/draw.js"></script>
     <script>
         //0: i
         blockDefault[0][0] = {
@@ -288,14 +289,12 @@
             x2: 1,
             x3: 2,
             x4: 3,
-            y1: 0,
             y2: 0,
             y3: 0,
             y4: 0,
             xSize: 4,
             ySize: 1,
-            firstName: "./img/",
-            lastName: "i1.png ",
+            nameBlock: "./img/i1.png ",
             color: "#00ffff ",
             next: 1
         }
@@ -306,14 +305,12 @@
             x2: 0,
             x3: 0,
             x4: 0,
-            y1: 0,
             y2: 1,
             y3: 2,
             y4: 3,
             xSize: 1,
             ySize: 4,
-            firstName: "./img/",
-            lastName: "i2.png ",
+            nameBlock: "./img/i2.png ",
             color: "#00ffff ",
             next: 2
         }
@@ -324,14 +321,12 @@
             x2: 1,
             x3: 2,
             x4: 3,
-            y1: 0,
             y2: 0,
             y3: 0,
             y4: 0,
             xSize: 4,
             ySize: 1,
-            firstName: "./img/",
-            lastName: "i3.png ",
+            nameBlock: "./img/i3.png ",
             color: "#00ffff ",
             next: 3
         }
@@ -361,14 +356,12 @@
             x2: 0,
             x3: 1,
             x4: 2,
-            y1: 0,
             y2: 1,
             y3: 1,
             y4: 1,
             xSize: 3,
             ySize: 2,
-            firstName: "./img/",
-            lastName: "l1.png ",
+            nameBlock: "./img/l1.png ",
             color: "#ffcc33 ",
             next: 1
         }
@@ -379,14 +372,12 @@
             x2: 0,
             x3: 0,
             x4: 1,
-            y1: 0,
             y2: 1,
             y3: 2,
             y4: 2,
             xSize: 2,
             ySize: 3,
-            firstName: "./img/",
-            lastName: "l2.png ",
+            nameBlock: "./img/l2.png ",
             color: "#ffcc33 ",
             next: 2
         }
@@ -397,14 +388,12 @@
             x2: 1,
             x3: 2,
             x4: 0,
-            y1: 0,
             y2: 0,
             y3: 0,
             y4: 1,
             xSize: 3,
             ySize: 2,
-            firstName: "./img/",
-            lastName: "l3.png ",
+            nameBlock: "./img/l3.png ",
             color: "#ffcc33 ",
             next: 3
         }
@@ -434,14 +423,12 @@
             x2: 0,
             x3: 1,
             x4: 2,
-            y1: 0,
             y2: 1,
             y3: 1,
             y4: 1,
             xSize: 3,
             ySize: 2,
-            firstName: "./img/",
-            lastName: "ln1.png ",
+            nameBlock: "./img/ln1.png ",
             color: "#0000ff ",
             next: 1
         }
@@ -452,14 +439,12 @@
             x2: 1,
             x3: 0,
             x4: 0,
-            y1: 0,
             y2: 0,
             y3: 1,
             y4: 2,
             xSize: 2,
             ySize: 3,
-            firstName: "./img/",
-            lastName: "ln2.png ",
+            nameBlock: "./img/ln2.png ",
             color: "#0000ff ",
             next: 2
         }
@@ -470,14 +455,12 @@
             x2: 1,
             x3: 2,
             x4: 2,
-            y1: 0,
             y2: 0,
             y3: 0,
             y4: 1,
             xSize: 3,
             ySize: 2,
-            firstName: "./img/",
-            lastName: "ln3.png ",
+            nameBlock: "./img/ln3.png ",
             color: "#0000ff ",
             next: 3
         }
@@ -507,14 +490,12 @@
             x2: 2,
             x3: 0,
             x4: 1,
-            y1: 0,
             y2: 0,
             y3: 1,
             y4: 1,
             xSize: 3,
             ySize: 2,
-            firstName: "./img/",
-            lastName: "s1.png ",
+            nameBlock: "./img/s1.png ",
             color: "#00ff00 ",
             next: 1
         }
@@ -525,14 +506,12 @@
             x2: 0,
             x3: 1,
             x4: 1,
-            y1: 0,
             y2: 1,
             y3: 1,
             y4: 2,
             xSize: 2,
             ySize: 3,
-            firstName: "./img/",
-            lastName: "s2.png ",
+            nameBlock: "./img/s2.png ",
             color: "#00ff00 ",
             next: 2
         }
@@ -543,14 +522,12 @@
             x2: 2,
             x3: 0,
             x4: 1,
-            y1: 0,
             y2: 0,
             y3: 1,
             y4: 1,
             xSize: 3,
             ySize: 2,
-            firstName: "./img/",
-            lastName: "s3.png ",
+            nameBlock: "./img/s3.png ",
             color: "#00ff00 ",
             next: 3
         }
@@ -580,14 +557,12 @@
             x2: 1,
             x3: 1,
             x4: 2,
-            y1: 0,
             y2: 0,
             y3: 1,
             y4: 1,
             xSize: 3,
             ySize: 2,
-            firstName: "./img/",
-            lastName: "sn1.png ",
+            nameBlock: "./img/sn1.png ",
             color: "#ff0000 ",
             next: 1
         }
@@ -598,14 +573,12 @@
             x2: 0,
             x3: 1,
             x4: 0,
-            y1: 0,
             y2: 1,
             y3: 1,
             y4: 2,
             xSize: 2,
             ySize: 3,
-            firstName: "./img/",
-            lastName: "sn2.png ",
+            nameBlock: "./img/sn2.png ",
             color: "#ff0000 ",
             next: 2
         }
@@ -616,14 +589,12 @@
             x2: 1,
             x3: 1,
             x4: 2,
-            y1: 0,
             y2: 0,
             y3: 1,
             y4: 1,
             xSize: 3,
             ySize: 2,
-            firstName: "./img/",
-            lastName: "sn3.png ",
+            nameBlock: "./img/sn3.png ",
             color: "#ff0000 ",
             next: 3
         }
@@ -653,14 +624,12 @@
             x2: 0,
             x3: 1,
             x4: 2,
-            y1: 0,
             y2: 1,
             y3: 1,
             y4: 1,
             xSize: 3,
             ySize: 2,
-            firstName: "./img/",
-            lastName: "t1.png ",
+            nameBlock: "./img/t1.png ",
             color: "#800080 ",
             next: 1
         }
@@ -671,14 +640,12 @@
             x2: 0,
             x3: 1,
             x4: 0,
-            y1: 0,
             y2: 1,
             y3: 1,
             y4: 2,
             xSize: 2,
             ySize: 3,
-            firstName: "./img/",
-            lastName: "t2.png ",
+            nameBlock: "./img/t2.png ",
             color: "#800080 ",
             next: 2
         }
@@ -689,14 +656,12 @@
             x2: 1,
             x3: 2,
             x4: 1,
-            y1: 0,
             y2: 0,
             y3: 0,
             y4: 1,
             xSize: 3,
             ySize: 2,
-            firstName: "./img/",
-            lastName: "t3.png ",
+            nameBlock: "./img/t3.png ",
             color: "#800080 ",
             next: 3
         }
@@ -726,24 +691,23 @@
             x2: 1,
             x3: 0,
             x4: 1,
-            y1: 0,
             y2: 0,
             y3: 1,
             y4: 1,
             xSize: 2,
             ySize: 2,
-            firstName: "./img/",
-            lastName: "v.png ",
+            nameBlock: "./img/v.png ",
             color: "#ffff00 ",
             next: 0
         }
         var stt = 0;
-        nRandom = Math.floor(Math.random() * 7);
+        nextBlock = Math.floor(Math.random() * 7);
+        // nRandom = 6;
         randomBlock();
         document.addEventListener("keydown", (event) => {
             switch (event.keyCode) {
-                case 32:
-                    down();
+                case 13:
+                    location.reload();
                     break;
                 case 37:
                     left();
@@ -755,13 +719,18 @@
                     right();
                     break;
                 case 67:
-                    skipBlock();
+                    keyPress = 67;
                     break;
             }
         })
         document.addEventListener("keyup", (event) => {
-            if (event.keyCode == 40) {
-                down()
+            switch (event.keyCode) {
+                case 40:
+                    keyPress = 40;
+                    break;
+                case 32:
+                    keyPress = 32;
+                    break;
             }
         })
     </script>

@@ -5,5 +5,4 @@ function saveBlock(saveX, saveY, saveColor, saveBorder, valueMain) {
         document.getElementById(saveX + 1 + 10 * (saveY)).style.border = saveBorder;
         skipStatus = false;
     }
-    return 0;
 }

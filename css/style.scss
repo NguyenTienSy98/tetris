@@ -6,6 +6,9 @@
 
 body {
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main {
@@ -13,11 +16,7 @@ body {
     margin: 20px auto;
     display: flex;
     flex-direction: row;
-    // width: 700px;
-    // height: 600px;
     &>.leftCanvas {
-        width: 150px;
-        height: 150px;
         margin-right: 50px;
         &>#skipCanvas {
             border: 3px solid grey;
@@ -26,8 +25,6 @@ body {
     &>.myCanvas {
         margin: 0;
         padding: 0;
-        width: 300px;
-        height: 600px;
         margin-right: 50px;
         box-sizing: content-box;
         border: 3px solid grey;

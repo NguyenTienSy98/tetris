@@ -7,6 +7,15 @@
 
 body {
   background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main {
@@ -23,8 +32,6 @@ body {
 }
 
 .main > .leftCanvas {
-  width: 150px;
-  height: 150px;
   margin-right: 50px;
 }
 
@@ -35,8 +42,6 @@ body {
 .main > .myCanvas {
   margin: 0;
   padding: 0;
-  width: 300px;
-  height: 600px;
   margin-right: 50px;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
