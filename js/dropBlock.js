@@ -12,7 +12,7 @@ function dropBlock() {
         const elapsed = timestamp - start; // time run
         if (yBlock < yDown * 30 && (keyPress == 0 || (keyPress == 67 && skipStatus == true))) {
             yBlock = 0.03 * lv * elapsed + yFirst;
-            myCanvas.clearRect(0, 0, 300, yBlock + y4 * 30);
+            myCanvas.clearRect(0, 0, 300, yBlock + y4 * 30 - 120);
             draw(yBlock, 1);
             previousTimeStamp = timestamp;
             window.requestAnimationFrame(step);
@@ -30,6 +30,7 @@ function stepWait(timestamp) { // press or yBlock >= yDown*30
         myCanvas.clearRect(0, 0, 300, 600);
         draw(yBlock, 1);
         dropBlock();
+        return 0;
     }
     let newTurn = false;
     if (yBlock > yDown * 30) {
@@ -79,11 +80,12 @@ function stepWait(timestamp) { // press or yBlock >= yDown*30
         window.requestAnimationFrame(stepWait);
     } else { // saveBlock
         myCanvas.clearRect(0, 0, 300, 600);
-        saveBlock(xBlock + x1, yBlock / 30, color, "1px solid white", block + 1);
-        saveBlock(xBlock + x2, y2 + yBlock / 30, color, "1px solid white", block + 1);
-        saveBlock(xBlock + x3, y3 + yBlock / 30, color, "1px solid white", block + 1);
-        saveBlock(xBlock + x4, y4 + yBlock / 30, color, "1px solid white", block + 1);
+        saveBlock(xBlock + x1, yBlock / 30, block);
+        myCanvas.clearRect(0, 0, 300, 600);
+        saveBlock(xBlock + x2, yBlock / 30 + y2, block);
+        saveBlock(xBlock + x3, yBlock / 30 + y3, block);
+        saveBlock(xBlock + x4, yBlock / 30 + y4, block);
         // if (skip > 10) skip -= 10;
-        randomBlock();
+        checkRow();
     }
 }

@@ -36,7 +36,6 @@ function up() {
         upX0 = upNext.x0,
         upY0 = upNext.y0,
         upXSize = upNext.xSize;
-
     if (xBlock + upX0 >= 0 && xBlock + upX0 + upXSize - 1 <= 9) {
         let check = false;
         if (checkBlock(xBlock + upX0, upY0 + Math.ceil(yBlock / 30), upX1, upX2, upY2, upX3, upY3, upX4, upY4)) {
@@ -61,6 +60,7 @@ function up() {
             myCanvas.clearRect(0, 0, 300, 600);
             let yDownFirst = yDown;
             drawDown();
+
             if (yDownFirst * 30 == yBlock) changeLoca = true;
         }
     }

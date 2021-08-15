@@ -10,12 +10,12 @@ function selectBlock() {
     y4 = blockDefault[block][0].y4;
     xSize = blockDefault[block][0].xSize;
     xBlock = Math.floor((10 - xSize) / 2);
-    yBlock = -(1 + y4) * 30;
+    yBlock = (3 - y4) * 30;
     next = blockDefault[block][0].next;
-    color = blockDefault[block][0].color;
     img.src = blockDefault[block][0].nameBlock;
     yDown = yBlock / 30;
     drawDown();
+
     dropBlock();
     return 0;
 }
