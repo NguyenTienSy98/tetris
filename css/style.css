@@ -1,113 +1,73 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 50px;
 }
 
-body {
-  background-color: black;
+body, body > #main, body > #main > #left, body > #main > #left > #skip, body > #main > #between, body > #main > #right, body > #main > #right > #next, body > #main > #right > #score {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.main {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  margin: 20px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
+body {
+  background-color: black;
+}
+
+body > #main {
+  margin-top: 30px;
+}
+
+body > #main > #left {
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.main > .leftCanvas {
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin-right: 50px;
 }
 
-.main > .leftCanvas > #skipCanvas {
+body > #main > #left > #skip {
   border: 3px solid grey;
 }
 
-.main > .myCanvas {
-  margin: 0;
-  padding: 0;
-  margin-right: 50px;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+body > #main > #between {
   border: 3px solid grey;
+  margin-right: 50px;
   position: relative;
 }
 
-.main > .myCanvas > .box {
-  width: 300px;
-  height: 600px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.main > .myCanvas > .box > .row {
-  width: 300px;
-  height: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-}
-
-.main > .myCanvas > .box > .row > div {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 30px;
-  height: 30px;
-}
-
-.main > .myCanvas > #myCanvas {
+body > #main > #between > #downCanvas {
   position: absolute;
-  top: 0;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
 }
 
-.main > .rightCanvas {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+body > #main > #between > #dropCanvas {
+  position: absolute;
+}
+
+body > #main > #right {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
-.main > .rightCanvas > #nextCanvas {
+body > #main > #right > #next {
   border: 3px solid grey;
   margin-bottom: 50px;
 }
 
-.main > .rightCanvas > #scoreCanvas {
+body > #main > #right > #score {
   border: 3px solid grey;
 }
 /*# sourceMappingURL=style.css.map */

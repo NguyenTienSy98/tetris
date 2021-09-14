@@ -1,30 +1,31 @@
-function dropBlock() {
-    keyPress = 0;
-    let yFirst = yBlock;
-    start = undefined;
-    previousTimeStamp = undefined;
-    window.requestAnimationFrame(step);
+function dropBlock(timestamp) {
+    xBlock = 0;
+    block = 20;
+    draw(150, 1);
+    xBlock = 3;
+    block = 4;
+    draw(150, 1);
+    console.log(xBlock);
 
-    function step(timestamp) {
-        if (start === undefined) {
-            start = timestamp;
-        }
-        const elapsed = timestamp - start; // time run
-        if (yBlock < yDown * 30 && (keyPress == 0 || (keyPress == 67 && skipStatus == true))) {
-            yBlock = 0.03 * lv * elapsed + yFirst;
-            myCanvas.clearRect(0, 0, 300, yBlock + y4 * 30 - 120);
-            draw(yBlock, 1);
-            previousTimeStamp = timestamp;
-            window.requestAnimationFrame(step);
-        } else {
-            start = undefined;
-            previousTimeStamp = undefined;
-            window.requestAnimationFrame(stepWait);
-        }
-    }
+    // console.log(yBlock, timestamp);
+    // yBlock = 150;
+    // // if (start === undefined) start = timestamp;
+    // if (timestamp < 5000) {
+    //     if (press != "none") {
+    //         window[press]();
+    //         press = "none";
+    //     }
+    //     // yBlock = 0.03 * lv * timestamp + (3 - y4[block]) * 30;
+    //     dropCanvas.clearRect(0, 0, 300, yBlock + y4[block] * 30 - 90);
+    //     draw(yBlock, 1);
+    //     window.requestAnimationFrame(dropBlock);
+    // } else {
+    //     yBlock = yDown * 30;
+    // }
 }
 
-function stepWait(timestamp) { // press or yBlock >= yDown*30
+function stepWait(timestamp) {
+    // press or yBlock >= yDown*30
     if (changeLoca) {
         changeLoca = false;
         myCanvas.clearRect(0, 0, 300, 600);
@@ -34,30 +35,31 @@ function stepWait(timestamp) { // press or yBlock >= yDown*30
     }
     let newTurn = false;
     if (yBlock > yDown * 30) {
-        yBlock = yDown * 30
+        yBlock = yDown * 30;
     }
     if (start === undefined) start = timestamp;
     const elapsed = timestamp - start;
-    if (keyPress == 40) {;
+    if (press == 40) {
         yBlock = yDown * 30;
         myCanvas.clearRect(0, 0, 300, 600);
         draw(yBlock, 1);
-        keyPress = 0;
+        press = 0;
     }
-    if (keyPress == 32) {
+    if (press == 32) {
         yBlock = yDown * 30;
         myCanvas.clearRect(0, 0, 300, 600);
         draw(yBlock, 1);
         newTurn = true;
-        keyPress = 0;
+        press = 0;
     }
-    if (keyPress == 67 && skipStatus == false) { // skip
+    if (press == 67 && skipStatus == false) {
+        // skip
         if (skip == -1) {
             skip = block;
             newTurn = true;
             imgSkip.src = img.src;
             skipCanvas.drawImage(imgSkip, 75 - xSize * 15, 60 - y4 * 15);
-            keyPress = 0;
+            press = 0;
             skipStatus = true;
             myCanvas.clearRect(0, 0, 300, 600);
             randomBlock();
@@ -69,16 +71,17 @@ function stepWait(timestamp) { // press or yBlock >= yDown*30
             imgSkip.src = img.src;
             skipCanvas.clearRect(0, 0, 150, 150);
             skipCanvas.drawImage(imgSkip, 75 - xSize * 15, 60 - y4 * 15);
-            keyPress = 0;
+            press = 0;
             myCanvas.clearRect(0, 0, 300, 600);
             skipStatus = true;
-            selectBlock();
+            setBlock();
         }
-
-    } else if (elapsed < 2000 && newTurn == false) { // keyPress the animation after 2 seconds
+    } else if (elapsed < 2000 && newTurn == false) {
+        // press the animation after 2 seconds
         previousTimeStamp = timestamp;
         window.requestAnimationFrame(stepWait);
-    } else { // saveBlock
+    } else {
+        // saveBlock
         myCanvas.clearRect(0, 0, 300, 600);
         saveBlock(xBlock + x1, yBlock / 30, block);
         myCanvas.clearRect(0, 0, 300, 600);

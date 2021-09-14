@@ -1,9 +1,9 @@
 function drawDown() {
-    yDown = Math.ceil(yBlock / 30);
-    while (yDown + 1 + y4 <= 23 && (yDown < 0 || checkBlock(xBlock, yDown + 1, x1, x2, y2, x3, y3, x4, y4))) {
+    while (
+        // main 3 -> 22
+        yDown + 1 + y4[block] <= 22 &&
+        (yDown < 0 || checkBlock(xBlock, yDown + 1, block))
+    )
         yDown++;
-    }
-    if (yDown * 30 > yBlock) {
-        draw(yDown * 30, 0);
-    }
+    draw(yDown * 30, 0);
 }

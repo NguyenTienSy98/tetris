@@ -1,11 +1,16 @@
-function randomBlock(value) {
+function randomBlock() {
     block = nextBlock;
-    // value == 1 ? skipStatus = true : skipStatus = false;
-    nextBlock = Math.floor(Math.random() * 7);
-    imgNext.src = blockDefault[nextBlock][0].nameBlock;
+    nextBlock = 4 * Math.floor(Math.random() * 7);
+    imgNext.src = src[block];
     nextCanvas.clearRect(0, 0, 150, 150);
     imgNext.onload = () => {
-        nextCanvas.drawImage(imgNext, (150 - blockDefault[nextBlock][0].xSize * 30) / 2, (150 - blockDefault[nextBlock][0].ySize * 30) / 2, blockDefault[nextBlock][0].xSize * 30, blockDefault[nextBlock][0].ySize * 30);
-    }
-    selectBlock();
+        nextCanvas.drawImage(
+            imgNext,
+            (150 - xSize[block] * boxSize) / 2,
+            (150 - (y4[block] + 1) * boxSize) / 2,
+            xSize[block] * boxSize,
+            (y4[block] + 1) * boxSize
+        );
+    };
+    setBlock();
 }

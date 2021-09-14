@@ -20,7 +20,7 @@
 //             skipCanvas.clearRect(0, 0, 150, 150);
 //             imgSkip.src = blockDefault[skip - 1][0].firstName + blockDefault[skip - 1][0].lastName;
 //             skipCanvas.drawImage(imgSkip, (150 - blockDefault[skip - 1][0].xSize * 30) / 2, (150 - blockDefault[skip - 1][0].ySize * 30) / 2, blockDefault[skip - 1][0].xSize * 30, blockDefault[skip - 1][0].ySize * 30);
-//             selectBlock();
+//             setBlock();
 //         }
 //     }
 // }
